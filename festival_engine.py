@@ -160,10 +160,58 @@ def process_festival_query(
     # =========================
     # WINDOW LOGIC
     # =========================
-    window = FESTIVAL_WINDOWS.get(
-        festival_name.lower(),
-        {"before": 15, "after": 7}
-    )
+        # =========================
+    # SMART WINDOW LOGIC
+    # =========================
+    festival_key = festival_name.lower().strip()
+
+    # Known custom windows
+    if festival_key in FESTIVAL_WINDOWS:
+
+        window = FESTIVAL_WINDOWS[
+            festival_key
+        ]
+
+    # Romantic / gifting occasions
+    elif any(
+        keyword in festival_key
+        for keyword in [
+            "valentine",
+            "mother",
+            "father",
+            "women",
+            "friendship"
+        ]
+    ):
+
+        window = {
+            "before": 7,
+            "after": 2
+        }
+
+    # Major shopping events
+    elif any(
+        keyword in festival_key
+        for keyword in [
+            "black friday",
+            "cyber monday",
+            "prime day",
+            "new year"
+        ]
+    ):
+
+        window = {
+            "before": 10,
+            "after": 3
+        }
+
+    # Default universal fallback
+    else:
+
+        window = {
+            "before": 15,
+            "after": 7
+        }
 
     start_date = festival_date - timedelta(
         days=window["before"]

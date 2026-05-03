@@ -27,7 +27,7 @@ def fetch_festival_date_from_llm(festival_name, year):
         # PROMPT
         # =========================
         prompt = (
-            f"What was the exact date of {festival_name} in India in {year}? "
+            f"What was the exact date of {festival_name} or occasion in India in {year}? This may be a festival, holiday, shopping event, or commercial occasion."
             f"Reply ONLY in YYYY-MM-DD format."
         )
 
