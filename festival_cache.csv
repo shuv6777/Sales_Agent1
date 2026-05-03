@@ -1,0 +1,10 @@
+festival_name,year,festival_date,source,verified
+diwali,2024,01-11-2024,manual,True
+diwali,2025,20-10-2025,manual,True
+navratri,2024,03-10-2024,manual,True
+navratri,2025,22-09-2025,manual,True
+dussehra,2024,12-10-2024,manual,True
+dussehra,2025,02-10-2025,manual,True
+christmas,2024,25-12-2024,manual,True
+christmas,2025,25-12-2025,manual,True
+diwali,2023,2023-11-12,llm,True

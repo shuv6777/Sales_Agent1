@@ -1,0 +1,6 @@
+.ollama/
+.config/
+__pycache__/
+*.pyc
+temp_uploaded_sales.csv
+.env
