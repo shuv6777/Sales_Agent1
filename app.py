@@ -22,7 +22,7 @@ st.set_page_config(
 # =========================
 # HEADER
 # =========================
-st.title("📊 Sales Date Intelligence Agent")
+st.title("📊 FindMyDate")
 st.write(
     "Upload your sales CSV and query by exact dates, relative dates, or festivals."
 )
