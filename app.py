@@ -280,8 +280,36 @@ if uploaded_file:
                 "Engine Output"
             )
 
+                        # =========================
+            # HUMAN READABLE DATE FORMAT
+            # =========================
+            display_result = final_result.copy()
+
+            for date_key in [
+                "festival_date",
+                "start_date",
+                "end_date",
+                "dataset_start",
+                "dataset_end"
+            ]:
+
+                if (
+                    date_key in display_result and
+                    display_result[date_key]
+                ):
+
+                    try:
+                        display_result[date_key] = pd.to_datetime(
+                            display_result[date_key]
+                        ).strftime(
+                            "%d-%b-%Y"
+                        )
+
+                    except Exception:
+                        pass
+
             st.json(
-                final_result
+                display_result
             )
 
             # =========================
