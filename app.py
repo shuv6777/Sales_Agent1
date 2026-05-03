@@ -14,7 +14,7 @@ from extractor import extract_data
 # PAGE CONFIG
 # =========================
 st.set_page_config(
-    page_title="FindMySales",
+    page_title="Sales Navigator",
     layout="wide"
 )
 
@@ -22,7 +22,7 @@ st.set_page_config(
 # =========================
 # HEADER
 # =========================
-st.title("📊 FindMySales")
+st.title("📊 Sales Navigator")
 st.write(
     "Upload your sales CSV and query by exact dates, relative dates or festivals."
 )
